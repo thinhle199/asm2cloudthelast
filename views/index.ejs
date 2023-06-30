@@ -1,0 +1,38 @@
+<%- include ('layout/header') %>
+<div class="container">
+    <div class="row my-4" >
+        <div class="col-lg-12">
+           <div class="table-responsive">
+            <% if(products != ''){ %>
+                <table class="table table-striped text-center my-3" >
+                    <thead>
+                        <tr class="table-dark">
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Description</th>
+                            <th>Image</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>               
+                        <% products.forEach((row,index) =>{ %>
+                            <tr class="align-middle">
+                                <td><%= row.Product_Name %></td>
+                                <td><%= row.Price %></td>
+                                <td><%= row.Description %></td>
+                                <td><img src="<%= row.Image %>" class="img-thumbnail" width="100px" height="100px"></td>
+                                <td>
+                                    <a href="/delete/<%= row._id %>" class="btn btn-danger btn-sm">Delete</a>
+                                </td>
+                            </tr>
+                        <% }) %>   
+                    </tbody>
+                </table>
+                <% } else { %>
+                    <h1 class="text-center text-dark mt-5">The inventory is emty!!</h1>
+                    <% } %>     
+           </div>
+        </div>
+    </div>
+</div>
+<%- include ('layout/footer') %>

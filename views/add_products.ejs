@@ -1,0 +1,37 @@
+<%- include ('layout/header') %>
+<div class="contrainer">
+    <div class="row">
+        <div class="col-lg-6 mx-auto mt-4">
+            <div class="card shadow">
+                <div class="card-header bg-primary bg-secondary">
+                    <h3 class="text-light text-center ">Add Products</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form action="/add" method="post" id="add-form" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="Product_Name">Product Name</label>
+                            <input type="text" name="Product_Name" class="form-control form-control-lg" id="Product_Name" placeholder="Enter Product Name" required/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Price">Price</label>
+                            <input type="text" name="Price" class="form-control form-control-lg" id="Price" placeholder="Enter Price" required/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Description">Description</label>
+                            <input type="text" name="Description" id="Description" placeholder="Description"class="form-control form-control-lg" required/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Image" class="form-label">Select Image</label>
+                            <input type="file" name="Image"  class="form-control form-control-lg" required/>
+                        </div>
+                        <div class="mb-3 d-grid ">
+                            <input type="submit" name="submit" value="Add Product" class="btn btn-primary btn-lg bg-secondary"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include ('layout/footer') %>
